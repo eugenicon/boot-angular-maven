@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {User, USER_DATA} from "../anchor-page/anchor-page.component";
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {Events, SelectionService} from "../selection.service";
+import {User, USER_DATA} from "../data";
 
 @Component({
   selector: 'app-page',
@@ -9,13 +10,20 @@ import {Router} from "@angular/router";
 })
 export class PageComponent implements OnInit {
   data: User[] = USER_DATA;
+  selectedItem: User;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private selectionService: SelectionService) {
+  }
 
   ngOnInit() {
+    this.selectionService.subscribe<User>(Events.USER_SELECTED, value => {
+      this.selectedItem = value
+    });
   }
 
   go(item: User) {
-    return this.router.navigateByUrl('page/anchor', {state: {'selectedItem': item}});
+    this.selectionService.submit(Events.GROUP_SELECTED, item.group);
+    this.selectionService.submit(Events.USER_SELECTED, item);
+    return this.router.navigateByUrl('page/anchor');
   }
 }

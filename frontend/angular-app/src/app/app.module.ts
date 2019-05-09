@@ -15,12 +15,16 @@ import {
 } from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule} from "@angular/forms";
+import { GroupComponent } from './group/group.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageComponent,
-    AnchorPageComponent
+    AnchorPageComponent,
+    GroupComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

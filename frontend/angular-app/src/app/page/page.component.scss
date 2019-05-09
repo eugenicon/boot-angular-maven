@@ -1,0 +1,12 @@
+li {
+  cursor: pointer;
+}
+
+li:hover {
+  background: gainsboro;
+}
+
+.selected {
+  font-weight: bold;
+  background: plum;
+}

@@ -1,0 +1,14 @@
+<mat-accordion multi>
+  <mat-expansion-panel *ngFor="let item of data" [expanded]="isPanelExpanded(item)" >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Group {{item.id}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div class="panel-body">
+      <app-user [data]="item.users"></app-user>
+    </div>
+
+  </mat-expansion-panel>
+</mat-accordion>
