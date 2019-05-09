@@ -5,16 +5,37 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import { PageComponent } from './page/page.component';
+import { AnchorPageComponent } from './anchor-page/anchor-page.component';
+import {
+  MatButtonModule,
+  MatExpansionModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatToolbarModule
+} from "@angular/material";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageComponent
+    PageComponent,
+    AnchorPageComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+
+    BrowserAnimationsModule,
+
+    MatButtonModule,
+    MatToolbarModule,
+    MatExpansionModule,
+
+    FormsModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

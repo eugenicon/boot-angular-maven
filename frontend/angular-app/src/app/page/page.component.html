@@ -1,5 +1,3 @@
-<p>
-  page works!
-
-  <img src="../../assets/pexels.jpeg">
-</p>
+<ul>
+  <li *ngFor="let item of data" (click)="go(item)"> {{item.id}}</li>
+</ul>
